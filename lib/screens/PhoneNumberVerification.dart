@@ -1,3 +1,4 @@
+import 'package:fintech_app/screens/OTP.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -10,6 +11,10 @@ class PhoneNumberVerification extends StatefulWidget {
 }
 
 class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
+  void handleSubmitButtonClick() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => OTP()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +84,7 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                   child: Text("Submit OTP", style: TextStyle(fontSize: 20)),
                   style:
                       TextButton.styleFrom(backgroundColor: Colors.blue[900]),
-                  onPressed: () {},
+                  onPressed: handleSubmitButtonClick,
                 ),
                 // decoration: BoxDecoration(border: Border.all()),
               ),

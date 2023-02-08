@@ -32,8 +32,17 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # for customize textfield phone number
+  # for customize textfield of phone number
   intl_phone_field: ^3.1.0
+
+  # for customize textfield of OTP 
+  flutter_otp_text_field: ^1.1.0+2
+
+  # for customize textfield for DOB
+  dob_input_field: ^2.0.0
+
+  # for circular progress indicator
+  percent_indicator: ^4.0.1
     
 
 
