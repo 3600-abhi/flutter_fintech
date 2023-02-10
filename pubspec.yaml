@@ -43,6 +43,9 @@ dependencies:
 
   # for circular progress indicator
   percent_indicator: ^4.0.1
+
+  # for confetti package
+  confetti: ^0.7.0
     
 
 
@@ -73,7 +76,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+      - assets/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

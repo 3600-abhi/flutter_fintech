@@ -1,3 +1,4 @@
+import 'package:fintech_app/screens/UploadBankStatement.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'dart:async';
@@ -50,18 +51,17 @@ class _FetchCreditReportState extends State<FetchCreditReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[50],
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.brown),
-        backgroundColor: Colors.amber[50],
+        iconTheme: IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.grey[50],
         elevation: 0,
         // title: Text('Personal Info'),
         actions: [
           IconButton(
-              icon: Icon(Icons.question_mark, color: Colors.brown, size: 30),
+              icon: Icon(Icons.question_mark, color: Colors.grey, size: 30),
               onPressed: () {}),
           IconButton(
-              icon: Icon(Icons.cancel, color: Colors.brown, size: 30),
+              icon: Icon(Icons.cancel, color: Colors.grey, size: 30),
               onPressed: () {}),
           SizedBox(width: 8),
         ],
@@ -100,7 +100,25 @@ class _FetchCreditReportState extends State<FetchCreditReport> {
                   style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20))
+                      fontSize: 20)),
+              SizedBox(height: 50),
+              Container(
+                height: 50,
+                width: 400,
+                child: ElevatedButton(
+                  child: Text("Fake Button", style: TextStyle(fontSize: 20)),
+                  style:
+                      TextButton.styleFrom(backgroundColor: Colors.blue[900]),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UploadBankStatement()));
+                  },
+                ),
+                // decoration: BoxDecoration(border: Border.all()),
+              ),
+              SizedBox(height: 20),
             ])),
       ),
     );

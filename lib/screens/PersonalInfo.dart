@@ -38,17 +38,16 @@ class _PersonalInfoState extends State<PersonalInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[50],
       appBar: AppBar(
-        backgroundColor: Colors.amber[50],
+        backgroundColor: Colors.grey[50],
         elevation: 0,
         // title: Text('Personal Info'),
         actions: [
           IconButton(
-              icon: Icon(Icons.question_mark, color: Colors.brown, size: 30),
+              icon: Icon(Icons.question_mark, color: Colors.grey, size: 30),
               onPressed: () {}),
           IconButton(
-              icon: Icon(Icons.cancel, color: Colors.brown, size: 30),
+              icon: Icon(Icons.cancel, color: Colors.grey, size: 30),
               onPressed: () {}),
           SizedBox(width: 8),
         ],

@@ -20,18 +20,17 @@ class _BasicDetailsState extends State<BasicDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[50],
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.brown),
-        backgroundColor: Colors.amber[50],
+        iconTheme: IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.grey[50],
         elevation: 0,
         // title: Text('Personal Info'),
         actions: [
           IconButton(
-              icon: Icon(Icons.question_mark, color: Colors.brown, size: 30),
+              icon: Icon(Icons.question_mark, color: Colors.grey, size: 30),
               onPressed: () {}),
           IconButton(
-              icon: Icon(Icons.cancel, color: Colors.brown, size: 30),
+              icon: Icon(Icons.cancel, color: Colors.grey, size: 30),
               onPressed: () {}),
           SizedBox(width: 8),
         ],
@@ -110,7 +109,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                     value: Gender.Male,
                     groupValue: _gender,
                     fillColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.indigo),
+                        (states) => Colors.grey),
                     focusColor:
                         MaterialStateColor.resolveWith((states) => Colors.grey),
                     onChanged: (value) {
@@ -131,7 +130,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                     value: Gender.Female,
                     groupValue: _gender,
                     fillColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.indigo),
+                        (states) => Colors.grey),
                     focusColor:
                         MaterialStateColor.resolveWith((states) => Colors.grey),
                     onChanged: (value) {
@@ -151,7 +150,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                     value: Gender.Other,
                     groupValue: _gender,
                     fillColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.indigo),
+                        (states) => Colors.grey),
                     focusColor:
                         MaterialStateColor.resolveWith((states) => Colors.grey),
                     onChanged: (value) {
