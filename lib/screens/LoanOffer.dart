@@ -1,3 +1,4 @@
+import 'package:fintech_app/screens/LoanDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -25,7 +26,7 @@ class _LoanOfferState extends State<LoanOffer> {
 
   void updateSliderValueAndAmount(double value) {
     setState(() {
-      amount = sliderValue = value;
+      amount = value;
     });
   }
 
@@ -91,7 +92,7 @@ class _LoanOfferState extends State<LoanOffer> {
                     child: Slider(
                       min: 0,
                       max: 500000,
-                      value: sliderValue,
+                      value: amount,
                       divisions: 5,
                       // autofocus: true,
                       thumbColor: Colors.white,
@@ -192,7 +193,7 @@ class _LoanOfferState extends State<LoanOffer> {
             Container(
               padding: EdgeInsets.all(15),
               width: MediaQuery.of(context).size.width,
-              color: Colors.indigo[100],
+              color: Colors.indigo[200],
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -274,20 +275,24 @@ class _LoanOfferState extends State<LoanOffer> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Loan Amount", style: TextStyle(fontSize: 18)),
+                        Text("Loan Amount",
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
                         SizedBox(height: 5),
                         Text(indianRupeesFormat.format(totalDisbursalAmount),
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold))
+                                fontSize: 20, fontWeight: FontWeight.bold))
                       ],
                     ),
                     Container(
                       height: 50,
                       child: ElevatedButton(
                         child: Text("Apply for Loan"),
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.blue[900]),
-                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            elevation: 0, backgroundColor: Colors.blue[900]),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => LoanDetails()));
+                        },
                       ),
                       // decoration: BoxDecoration(border: Border.all()),
                     ),
@@ -296,7 +301,6 @@ class _LoanOfferState extends State<LoanOffer> {
             SizedBox(height: 50),
             Text("A Product of Logiciel Analytics",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 40)
           ],
         ),
       )),
