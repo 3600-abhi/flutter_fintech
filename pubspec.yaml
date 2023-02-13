@@ -46,6 +46,12 @@ dependencies:
 
   # for confetti package
   confetti: ^0.7.0
+
+  # for currency conversion
+  intl: ^0.18.0
+
+  # for sliders package
+  syncfusion_flutter_sliders: ^20.4.49
     
 
 

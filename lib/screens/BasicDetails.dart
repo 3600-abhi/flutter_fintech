@@ -21,16 +21,16 @@ class _BasicDetailsState extends State<BasicDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.grey),
+        iconTheme: IconThemeData(color: Colors.orange[300]),
         backgroundColor: Colors.grey[50],
         elevation: 0,
         // title: Text('Personal Info'),
         actions: [
           IconButton(
-              icon: Icon(Icons.question_mark, color: Colors.grey, size: 30),
+              icon: Icon(Icons.question_mark, color: Colors.orange[300], size: 30),
               onPressed: () {}),
           IconButton(
-              icon: Icon(Icons.cancel, color: Colors.grey, size: 30),
+              icon: Icon(Icons.cancel, color: Colors.orange[300], size: 30),
               onPressed: () {}),
           SizedBox(width: 8),
         ],

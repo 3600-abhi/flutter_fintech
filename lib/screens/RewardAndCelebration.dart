@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:confetti/confetti.dart';
+import 'package:fintech_app/screens/IconStepperDemo.dart';
+import 'package:fintech_app/screens/LoanApplicationForm.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'dart:math';
@@ -91,16 +93,16 @@ class _RewardAndCelebrationState extends State<RewardAndCelebration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.grey),
+        iconTheme: IconThemeData(color: Colors.orange[300]),
         backgroundColor: Colors.grey[50],
         elevation: 0,
         // title: Text('Personal Info'),
         actions: [
           IconButton(
-              icon: Icon(Icons.question_mark, color: Colors.grey, size: 30),
+              icon: Icon(Icons.question_mark, color: Colors.orange[300], size: 30),
               onPressed: () {}),
           IconButton(
-              icon: Icon(Icons.cancel, color: Colors.grey, size: 30),
+              icon: Icon(Icons.cancel, color: Colors.orange[300], size: 30),
               onPressed: () {}),
           SizedBox(width: 8),
         ],
@@ -196,7 +198,13 @@ class _RewardAndCelebrationState extends State<RewardAndCelebration> {
                             Text("Fake Button", style: TextStyle(fontSize: 20)),
                         style: TextButton.styleFrom(
                             backgroundColor: Colors.blue[900]),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator.push(context, MaterialPageRoute(builder: (context) => IconStepperDemo()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoanApplicationForm()));
+                        },
                       ),
                       // decoration: BoxDecoration(border: Border.all()),
                     ),
