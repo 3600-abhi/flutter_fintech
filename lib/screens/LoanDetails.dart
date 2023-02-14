@@ -1,7 +1,7 @@
+import 'package:fintech_app/screens/PersonalDetails.dart';
 import 'package:flutter/material.dart';
 
 List<String> loanReasonsList = [
-  "Select loan reason",
   "Education",
   "Medical",
   "Travel",
@@ -16,12 +16,13 @@ class LoanDetails extends StatefulWidget {
 }
 
 class _LoanDetailsState extends State<LoanDetails> {
-  String dropDownValue = loanReasonsList.first;
+  String dropDownValue = "Select loan Reason";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.orange),
         backgroundColor: Colors.grey[50],
         elevation: 0,
         actions: [
@@ -68,11 +69,14 @@ class _LoanDetailsState extends State<LoanDetails> {
               SizedBox(height: 15),
               Container(
                 padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                color: Colors.grey[300],
                 width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.grey[300],
+                  ),
                 child: DropdownButton(
                   underline: SizedBox(),
-                  alignment: Alignment.center,
+                  // alignment: Alignment.center,
                   isExpanded: true,
                   items: loanReasonsList.map((value) {
                     return DropdownMenuItem(child: Text(value), value: value);
@@ -82,10 +86,13 @@ class _LoanDetailsState extends State<LoanDetails> {
                       dropDownValue = value!;
                     });
                   },
-                  value: dropDownValue,
+                  // value: dropDownValue,
+                  hint: Text(dropDownValue,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
               ),
-              SizedBox(height: 400),
+              SizedBox(height: 350),
               Container(
                 height: 50,
                 width: 400,
@@ -93,7 +100,9 @@ class _LoanDetailsState extends State<LoanDetails> {
                   child: Text("Next", style: TextStyle(fontSize: 20)),
                   style:
                       TextButton.styleFrom(backgroundColor: Colors.blue[900]),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalDetails()));
+                  },
                 ),
                 // decoration: BoxDecoration(border: Border.all()),
               ),
