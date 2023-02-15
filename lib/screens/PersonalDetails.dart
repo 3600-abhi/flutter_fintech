@@ -1,3 +1,4 @@
+import 'package:fintech_app/screens/LoanOfferWithDisbursalAmoutBreakdown.dart';
 import 'package:flutter/material.dart';
 
 enum maritalStatus { Married, Unmarried, Null }
@@ -95,7 +96,8 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       items: educationLevelList.map((value) {
-                        return DropdownMenuItem(child: Text(value), value: value);
+                        return DropdownMenuItem(
+                            child: Text(value), value: value);
                       }).toList(),
                       onChanged: (value) {
                         setState(() {
@@ -168,12 +170,14 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                             });
                           },
                         ),
-                        Text("Married", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),)
+                        Text(
+                          "Married",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                        )
                       ],
                     )),
-
                     SizedBox(width: 25),
-
                     Container(
                         child: Row(
                       children: [
@@ -190,7 +194,11 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                             });
                           },
                         ),
-                        Text("Unmarried", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),)
+                        Text(
+                          "Unmarried",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                        )
                       ],
                     )),
                   ],
@@ -205,7 +213,13 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                   child: Text("Submit", style: TextStyle(fontSize: 20)),
                   style:
                       TextButton.styleFrom(backgroundColor: Colors.blue[900]),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                LoanOfferWithDisbursalAmountBreakdown()));
+                  },
                 ),
                 // decoration: BoxDecoration(border: Border.all()),
               ),

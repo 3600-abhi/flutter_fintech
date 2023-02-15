@@ -52,6 +52,9 @@ dependencies:
 
   # for sliders package
   syncfusion_flutter_sliders: ^20.4.49
+
+  # for modal Package
+  bs_flutter_modal: ^1.0.6
     
 
 
