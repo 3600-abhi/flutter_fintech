@@ -1,4 +1,4 @@
-import 'package:fintech_app/screens/PersonalInfo.dart';
+import 'package:fintech_app/screens/PhoneNumberVerification.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FinTech App',
-      home: PersonalInfo(),
+      home: PhoneNumberVerification(),
     );
   }
 }

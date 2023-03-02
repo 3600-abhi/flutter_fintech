@@ -38,9 +38,6 @@ dependencies:
   # for customize textfield of OTP 
   flutter_otp_text_field: ^1.1.0+2
 
-  # for customize textfield for DOB
-  dob_input_field: ^2.0.0
-
   # for circular progress indicator
   percent_indicator: ^4.0.1
 
@@ -50,11 +47,23 @@ dependencies:
   # for currency conversion
   intl: ^0.18.0
 
-  # for sliders package
-  syncfusion_flutter_sliders: ^20.4.49
+  # for http package
+  http: ^0.13.5
 
-  # for modal Package
-  bs_flutter_modal: ^1.0.6
+  # for local storage
+  shared_preferences: ^2.0.18
+
+  # for custom loader
+  flutter_spinkit: ^5.1.0
+
+
+  
+
+
+
+
+
+
     
 
 

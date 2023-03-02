@@ -1,3 +1,4 @@
+import 'package:fintech_app/api/APILogin.dart';
 import 'package:fintech_app/screens/OTP.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -11,8 +12,22 @@ class PhoneNumberVerification extends StatefulWidget {
 }
 
 class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
+  String mobileNumber = "";
   void handleSubmitButtonClick() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => OTP()));
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => OTP(mobileNumber: mobileNumber)));
+  }
+
+  Future<void> callAPILogin() async {
+    await APILogin.Login();
+  }
+
+  @override
+  void initState() {
+    callAPILogin();
+    super.initState();
   }
 
   @override
@@ -25,7 +40,8 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
         // title: Text('Personal Info'),
         actions: [
           IconButton(
-              icon: Icon(Icons.question_mark, color: Colors.orange[300], size: 30),
+              icon: Icon(Icons.question_mark,
+                  color: Colors.orange[300], size: 30),
               onPressed: () {}),
           IconButton(
               icon: Icon(Icons.cancel, color: Colors.orange[300], size: 30),
@@ -72,7 +88,8 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                 ),
                 initialCountryCode: 'IN',
                 onChanged: (phone) {
-                  print(phone.completeNumber);
+                  mobileNumber = phone.number;
+                  print("My mobile number is : ${mobileNumber}");
                 },
               ),
               SizedBox(height: 250),
@@ -80,7 +97,7 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                 height: 50,
                 width: 400,
                 child: ElevatedButton(
-                  child: Text("Submit OTP", style: TextStyle(fontSize: 20)),
+                  child: Text("Send OTP", style: TextStyle(fontSize: 20)),
                   style:
                       TextButton.styleFrom(backgroundColor: Colors.blue[900]),
                   onPressed: handleSubmitButtonClick,

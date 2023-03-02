@@ -1,5 +1,6 @@
 import 'package:fintech_app/Constant.dart';
-import 'package:fintech_app/screens/PhoneNumberVerification.dart';
+import 'package:fintech_app/localStorage/LocalStorage.dart';
+import 'package:fintech_app/screens/BasicDetails.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfo extends StatefulWidget {
@@ -11,6 +12,8 @@ class PersonalInfo extends StatefulWidget {
 
 class _PersonalInfoState extends State<PersonalInfo> {
   bool isChecked = false;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   void handlePressCheckbox(bool? value) {
     setState(() {
@@ -19,8 +22,8 @@ class _PersonalInfoState extends State<PersonalInfo> {
   }
 
   void handleNextButtonClick() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => PhoneNumberVerification()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => BasicDetails()));
   }
 
   Color getColor(Set<MaterialState> states) {
@@ -35,10 +38,22 @@ class _PersonalInfoState extends State<PersonalInfo> {
     return Colors.grey;
   }
 
+  void handleAutoFill() async {
+    nameController.text = (await LocalStorage.fetchData("name"))!;
+    emailController.text = (await LocalStorage.fetchData("email"))!;
+  }
+
+  @override
+  void initState() {
+    handleAutoFill();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.orange[300]),
         backgroundColor: Colors.grey[50],
         elevation: 0,
         // title: Text('Personal Info'),
@@ -90,6 +105,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
               ),
               SizedBox(height: 10),
               TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                     hintText: "Enter Your Full Name As Per PAN",
                     focusedBorder: OutlineInputBorder(
@@ -115,6 +131,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
               ),
               SizedBox(height: 10),
               TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                       hintText: "Enter your Email Address",
                       focusedBorder: OutlineInputBorder(
