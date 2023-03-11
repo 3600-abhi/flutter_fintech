@@ -14,16 +14,15 @@ class APILogin {
       final response = await http.post(url, body: body);
       final data = jsonDecode(response.body);
 
-      print("HeHeHe inside APILogin fn");
-      print(data);
+      // print(data);
 
       final id = data["id"].toString();
       final ttl = data["ttl"].toString();
       final userId = data["userId"].toString();
       
-      print("My Id : ${id}");
-      print("My ttl : ${ttl}");
-      print("My userId : ${userId}");
+      // print("My Id : ${id}");
+      // print("My ttl : ${ttl}");
+      // print("My userId : ${userId}");
 
       await LocalStorage.saveData("id", id);
       await LocalStorage.saveData("ttl", ttl);

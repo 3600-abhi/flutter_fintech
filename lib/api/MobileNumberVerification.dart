@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class MobileNumberVerification {
   static Future<Map<dynamic, dynamic>?> sendOTP(String mobileNumber) async {
-    print(".......inside send OTP fn........");
+    // print(".......inside send OTP fn........");
     try {
       final accessToken = await LocalStorage.fetchData("id");
       final userId = await LocalStorage.fetchData("userId");
@@ -37,7 +37,7 @@ class MobileNumberVerification {
 
   static Future<int> verifyOTP(
       String otp, String referenceId, String mobileNumber) async {
-    print("..............inside verify otp function........");
+    // print("..............inside verify otp function........");
     try {
       final accessToken = await LocalStorage.fetchData("id");
       final userId = await LocalStorage.fetchData("userId");
@@ -60,12 +60,12 @@ class MobileNumberVerification {
         "Authorization": accessToken!,
       };
       final response = await http.post(url, body: body, headers: header);
-      print(response.statusCode);
+      // print(response.statusCode);
 
       if (response.statusCode != 200) return response.statusCode;
 
       final data = jsonDecode(response.body);
-      print(data);
+      // print(data);
 
       final name = data["result"]["name"].toString();
       final email = data["result"]["email"].toString();

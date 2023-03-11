@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class PanVerification {
   static Future<int> verify(String panNumber) async {
-    print("...........inside pan verification api.............");
+    // print("...........inside pan verification api.............");
     try {
       final accessToken = await LocalStorage.fetchData("id");
       final userId = await LocalStorage.fetchData("userId");
@@ -23,10 +23,10 @@ class PanVerification {
           Uri.parse("https://signzy.tech/api/v2/patrons/${userId}/panv2");
 
       final response = await http.post(url, headers: header, body: body);
-      print(
-          "........Inside PanVerification Class and statusCode is : ${response.statusCode} .............");
+      // print(
+      //     "........Inside PanVerification Class and statusCode is : ${response.statusCode} .............");
       final data = await jsonDecode(response.body);
-      print(data);
+      // print(data);
       return response.statusCode;
     } catch (e) {
       print("Inside catch block of PAN verification");

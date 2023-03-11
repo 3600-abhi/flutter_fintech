@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:confetti/confetti.dart';
-import 'package:fintech_app/screens/IconStepperDemo.dart';
 import 'package:fintech_app/screens/LoanApplicationForm.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';

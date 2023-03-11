@@ -1,4 +1,4 @@
-import 'package:fintech_app/screens/LoanOfferWithDisbursalAmoutBreakdown.dart';
+import 'package:fintech_app/screens/DigilockerPage.dart';
 import 'package:flutter/material.dart';
 
 enum maritalStatus { Married, Unmarried, Null }
@@ -214,11 +214,13 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                   style:
                       TextButton.styleFrom(backgroundColor: Colors.blue[900]),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                LoanOfferWithDisbursalAmountBreakdown()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DigilockerPage()));
+
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) =>
+                    //             LoanOfferWithDisbursalAmountBreakdown()));
                   },
                 ),
                 // decoration: BoxDecoration(border: Border.all()),
