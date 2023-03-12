@@ -26,8 +26,8 @@ class _DigilockerPageState extends State<DigilockerPage> {
     digilockerUrl = data["digilockerUrl"];
     requestId = data["requestId"];
 
-    print("${digilockerUrl}");
-    print("*************Value of requestId is : ${requestId}**************");
+    // print("${digilockerUrl}");
+    // print("*************Value of requestId is : ${requestId}**************");
 
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
@@ -43,7 +43,7 @@ class _DigilockerPageState extends State<DigilockerPage> {
 
             if (request.url.startsWith(
                 'https://digilocker.signzy.tech/digilocker-auth-complete')) {
-              Timer(Duration(seconds: 2
+              Timer(Duration(seconds: 5
               ), () {
                 Navigator.push(
                     context,
